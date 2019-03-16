@@ -39,6 +39,7 @@ ul li a {
   flex-grow: 1;
   background: lightblue;
   padding: 10px;
+  height: fit-content;
 }
 .content_news article {
   margin-bottom: 20px;
