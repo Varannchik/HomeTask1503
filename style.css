@@ -122,12 +122,15 @@ input {
   padding: 0 10px 0 30px;
 }
 .main {
+  display: flex;
   background: url("img/Слой 2 копия.jpg") no-repeat center;
   background-size: cover;
+  height: 100vh;
 }
 .menu {
   width: 135px;
   background: #1D2024;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -160,9 +163,91 @@ input {
 }
 .menu a:hover svg {
   color: #F4AC26;
-  -webkit-filter: drop-shadow(0 0 5px rgba(250, 194, 19, 0.7));
-  filter: drop-shadow(0 0 5px rgba(250, 194, 19, 0.7));
+  -webkit-filter: drop-shadow(0 0 20px rgba(250, 194, 19, 0.7));
+  filter: drop-shadow(0 0 20px rgba(250, 194, 19, 0.7));
   opacity: inherit;
-  fill: linear-gradient(0deg, #FDCB0C -38.68%, #F4AC26 100%);
-  stroke: rgba(250, 194, 19, 0.7);
+  fill: rgba(250, 194, 19, 0.7);
+}
+/* Базовый контейнер табов */
+.tabs {
+  min-width: 320px;
+  max-width: 946px;
+  padding: 0px;
+  margin: 0 auto;
+  border: 1px solid #717278;
+  background: linear-gradient(180deg, rgba(29, 32, 36, 0.6) 45.23%, rgba(29, 32, 36, 0) 100%);
+  mix-blend-mode: normal;
+  backdrop-filter: blur(20px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 3px;
+}
+/* Стили секций с содержанием */
+.tabs > section {
+  display: none;
+  padding: 15px;
+}
+.tabs > section > p {
+  margin: 0 0 5px;
+  line-height: 1.5;
+  color: #383838;
+  /* прикрутим анимацию */
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+/* Описываем анимацию свойства opacity */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Прячем чекбоксы */
+.tabs > input {
+  display: none;
+  position: absolute;
+}
+/* Стили переключателей вкладок (табов) */
+.tabs > label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #aaa;
+}
+/* Шрифт-иконки от Font Awesome в формате Unicode */
+.tabs > label:before {
+  font-weight: normal;
+  margin-right: 10px;
+}
+/* Изменения стиля переключателей вкладок при наведении */
+.tabs > label:hover {
+  color: #888;
+  cursor: pointer;
+}
+/* Стили для активной вкладки */
+.tabs > input:checked + label {
+  color: #555;
+  border-bottom: 1px solid #fff;
+}
+/* Активация секций с помощью псевдокласса :checked */
+#tab1:checked ~ #content-tab1,
+#tab2:checked ~ #content-tab2,
+#tab3:checked ~ #content-tab3,
+#tab4:checked ~ #content-tab4 {
+  display: block;
 }
