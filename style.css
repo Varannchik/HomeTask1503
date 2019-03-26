@@ -1,253 +1,80 @@
-* {
-  margin: 0;
+body {
   padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
-.container {
-  height: 100vh;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  line-height: normal;
-}
-.header_wrap {
-  display: flex;
-  justify-content: space-between;
-}
+/*Header style*/
 header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  background: linear-gradient(90deg, #1D2024 0%, #18191D 100%);
-  padding: 16px 0 16px 10px;
-  flex: 4   1   1000px;
-  border: 1px solid;
-  border-image: linear-gradient(90deg, #717278 0%, #2A2B31 100%);
-  border-image-slice: 1;
+  align-items: center;
+  background: lightsalmon;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
 }
 .logo {
-  display: flex;
-  align-items: center;
-  padding: 0 0 0 35px;
-}
-.logo .item_logo {
-  margin-left: 75px;
-  margin-top: 5px;
-}
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 25px;
-  height: 23px;
-  background: url("img/Polygon.png");
-  font-size: 8px;
-  color: white;
-}
-nav {
-  display: flex;
-  align-items: center;
-}
-.search-box {
-  position: relative;
-  margin-right: 48px;
-}
-.search-box i {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  color: #717278;
-  font-size: 10px;
-}
-input {
-  padding: 16px 23px;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: normal;
-  color: #717278;
-  border-radius: 3px;
-  border: 1px solid #717278;
-  background: #1D2024;
-  outline: none;
-  width: 380px;
-}
-.count_player {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  color: white;
-  font-size: 14px;
-  margin: 0 48px;
-  position: relative;
-}
-.count_player:before {
-  content: '';
-  position: absolute;
-  left: -48px;
-  top: -5px;
-  border-left: 3px solid #2A2B31;
-  height: 49px;
-}
-.account_info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-self: stretch;
-  background: #1D2024;
-  text-align: left;
-  flex: 2   1   100px;
-  padding: 0 10px 0 0;
-}
-.account_info:hover svg {
-  -webkit-filter: drop-shadow(0 0 3px rgba(250, 194, 19, 0.7));
-  filter: drop-shadow(0 0 3px rgba(250, 194, 19, 0.7));
-}
-.item_account {
-  display: flex;
-  align-items: center;
-}
-.player_info {
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 16px;
-  color: white;
-}
-.yellow_text {
-  background: linear-gradient(0deg, #FDCB0C -38.68%, #F4AC26 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: #F4AC26;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 21px;
-}
-.icon {
-  padding: 0 10px 0 30px;
-}
-.main {
-  display: flex;
-  background: url("img/Слой 2 копия.jpg") no-repeat center;
-  background-size: cover;
-  height: 100vh;
-}
-.menu {
-  width: 135px;
-  background: #1D2024;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.menu a {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 16px;
-  text-decoration: none;
-  color: #4A4D50;
-  border-bottom: 2px solid #1B1D21;
-  min-height: 100px;
-}
-.menu a svg {
-  margin-bottom: 15px;
-  opacity: 0.2;
-}
-.menu a:hover {
-  border-bottom: 2px solid #F4AC26;
-  color: white;
-}
-.menu a:hover span {
-  -webkit-filter: drop-shadow(0 18px 12px rgba(250, 194, 19, 0.9));
-  filter: drop-shadow(0 18px 12px rgba(250, 194, 19, 0.9));
-}
-.menu a:hover svg {
-  color: #F4AC26;
-  -webkit-filter: drop-shadow(0 0 20px rgba(250, 194, 19, 0.7));
-  filter: drop-shadow(0 0 20px rgba(250, 194, 19, 0.7));
-  opacity: inherit;
-  fill: rgba(250, 194, 19, 0.7);
-}
-/* Базовый контейнер табов */
-.tabs {
-  min-width: 320px;
-  max-width: 946px;
-  padding: 0px;
-  margin: 0 auto;
-  border: 1px solid #717278;
-  background: linear-gradient(180deg, rgba(29, 32, 36, 0.6) 45.23%, rgba(29, 32, 36, 0) 100%);
-  mix-blend-mode: normal;
-  backdrop-filter: blur(20px);
-  /* Note: backdrop-filter has minimal browser support */
-  border-radius: 3px;
-}
-/* Стили секций с содержанием */
-.tabs > section {
-  display: none;
-  padding: 15px;
-}
-.tabs > section > p {
-  margin: 0 0 5px;
-  line-height: 1.5;
-  color: #383838;
-  /* прикрутим анимацию */
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-}
-/* Описываем анимацию свойства opacity */
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-/* Прячем чекбоксы */
-.tabs > input {
-  display: none;
-  position: absolute;
-}
-/* Стили переключателей вкладок (табов) */
-.tabs > label {
-  display: inline-block;
-  margin: 0 0 -1px;
-  padding: 15px 25px;
-  font-weight: 600;
-  text-align: center;
-  color: #aaa;
-}
-/* Шрифт-иконки от Font Awesome в формате Unicode */
-.tabs > label:before {
-  font-weight: normal;
-  margin-right: 10px;
-}
-/* Изменения стиля переключателей вкладок при наведении */
-.tabs > label:hover {
-  color: #888;
   cursor: pointer;
 }
-/* Стили для активной вкладки */
-.tabs > input:checked + label {
-  color: #555;
-  border-bottom: 1px solid #fff;
+ul {
+  list-style: none;
+  text-align: center;
+  font-size: 14px;
 }
-/* Активация секций с помощью псевдокласса :checked */
-#tab1:checked ~ #content-tab1,
-#tab2:checked ~ #content-tab2,
-#tab3:checked ~ #content-tab3,
-#tab4:checked ~ #content-tab4 {
-  display: block;
+ul li {
+  display: inline-block;
+  margin: 0 20px;
 }
+ul li a {
+  text-decoration: none;
+  color: black;
+}
+/*End Header style*/
+/*Content Style*/
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.content_news {
+  flex-grow: 1;
+  background: lightblue;
+  padding: 10px;
+  height: fit-content;
+}
+.content_news article {
+  margin-bottom: 20px;
+}
+.header_news {
+  border-block-end: 1px solid;
+  margin: 0 0 20px 0;
+}
+h2 {
+  margin: 0;
+}
+section {
+  flex-grow: 3;
+  background: lemonchiffon;
+  padding: 10px;
+}
+section article {
+  border-block-end: 1px solid;
+}
+.article_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+/*End Content Style*/
+/*Footer style*/
+footer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  background: lightgreen;
+  height: 100px;
+}
+/*End Footer style*/
